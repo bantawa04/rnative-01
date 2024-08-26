@@ -20,7 +20,7 @@ const SquareScreen = () => {
     }
   }
   const [state, dispatch] = useReducer(reducer, { red: 0, blue: 0, green: 0 })
-
+  const {red, blue, green} = state
   // const setColor = (color, change) => {
   //     switch (color){
   //       case 'red':
@@ -42,28 +42,28 @@ const SquareScreen = () => {
       <ColorCounter
         title={"Red"}
         onIncrease={() => {
-          // setColor("red" , COLOR_INCREMENT)
+          dispatch({ colorToChange: "red", amount: COLOR_INCREMENT})
         }}
         onDecrease={() => {
-          // setColor("red" , -1 * COLOR_INCREMENT)
+          dispatch({ colorToChange: "red", amount: -1 * COLOR_INCREMENT})
         }}
       />
       <ColorCounter
         title={"Green"}
         onIncrease={() => {
-          // setColor("green" , COLOR_INCREMENT)
+          dispatch({ colorToChange: "green", amount: COLOR_INCREMENT})
         }}
         onDecrease={() => {
-          // setColor("green" , -1 * COLOR_INCREMENT)
+          dispatch({ colorToChange: "green", amount: -1 * COLOR_INCREMENT})
         }}
       />
       <ColorCounter
         title={"Blue"}
         onIncrease={() => {
-          setColor("blue", COLOR_INCREMENT)
+          dispatch({ colorToChange: "blue", amount: COLOR_INCREMENT})
         }}
         onDecrease={() => {
-          setColor("blue", -1 * COLOR_INCREMENT)
+          dispatch({ colorToChange: "blue", amount: -1 * COLOR_INCREMENT})
         }}
       />
       <View
