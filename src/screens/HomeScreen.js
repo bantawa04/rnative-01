@@ -10,6 +10,7 @@ const HomeScreen = ({navigation}) => {
       <Button title="Go to Counter screen" onPress={()=> navigation.navigate("CounterScreen")}/>
       <Button title="Go to Color Generator screen" onPress={()=> navigation.navigate("ColorGeneratorScreen")}/>
       <Button title="Go to Color Square screen" onPress={()=> navigation.navigate("SquareScreen")}/>
+      <Button title="Go to Text screen" onPress={()=> navigation.navigate("TextScreen")}/>
     </View>
 };
 

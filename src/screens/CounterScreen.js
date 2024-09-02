@@ -6,17 +6,17 @@ const CounterScreen = () => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "increment":
-        return {...state, count: state.count + COUNT}
+        return { ...state, count: state.count + COUNT }
       case "decrement":
-        return state.count < 0 ? 0 : {...state, count: state.count - COUNT}
+        return { ...state, count: Math.max(0, state.count - COUNT) }
       default:
         return state
     }
   }
-  const {state, dispatch} = useReducer(reducer,{count:0})
+  const [state, dispatch] = useReducer(reducer, { count: 0 })
 
   const setCounter = (type) => {
-    dispatch(type)
+    dispatch({ type })
   }
 
   return (
